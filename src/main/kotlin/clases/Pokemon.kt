@@ -2,17 +2,47 @@ package proyecto_final.clases
 
 class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int){
 
-    var nombre = nombre
-    var lore = lore
-    var tipo = tipo
-    var fuerza = fuerza
-    var vida = vida
+    var nombre = "defecto"
 
+        get() {
+            return field
+        }
+        set(value) {
+            field = value
+        }
 
-    val Pikachu = Pokemon("Pikachu", "Ratón eléctrico, el más popular del mundo Pokemon.", Tipo.Electrico, 20, 80)
-    val Squirtle = Pokemon("Squirtle", "Cuando se siente en peligro, se esconde en su caparazón y escupe chorros de agua por la boca.", Tipo.Agua, 20, 80)
-    val Bulbasur = Pokemon("Bulbasur", "A Bulbasaur es fácil verle echándose una siesta al sol.", Tipo.Planta, 20, 80)
-    val Geodude = Pokemon ("Geodude", "Se suele encontrar en senderos de montaña y sitios parecidos. Conviene andar con cuidado para no pisarlo sin querer y provocar su enfado.", Tipo.Roca, 20, 80)
+    var lore = "descripcion"
+        get() {
+            return field
+        }
+        set(value) {
+            field = value
+        }
+
+    var tipo = Tipo("planta", "basico")
+        get() {
+            return field
+        }
+        set(value) {
+            field = value
+        }
+
+    var fuerza = 10
+        get() {
+            return field
+        }
+        set(value) {
+            field = value
+        }
+
+    var vida = 150
+        get() {
+            return field
+        }
+
+        set(value) {
+            field = value
+        }
 
 
 
@@ -21,6 +51,27 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int)
 
     }
 
+
+    init{
+        this.nombre = nombre
+        this.lore = lore
+        this.tipo = tipo
+        this.fuerza = fuerza
+        this.vida = vida
+    }
+
+
+
+
+    /*
+     val Pikachu = Pokemon("Pikachu", "Ratón eléctrico, el más popular del mundo Pokemon.", Tipo.Electrico, 20, 80)
+     val Squirtle = Pokemon("Squirtle", "Cuando se siente en peligro, se esconde en su caparazón y escupe chorros de agua por la boca.", Tipo.Agua, 20, 80)
+     val Bulbasur = Pokemon("Bulbasur", "A Bulbasaur es fácil verle echándose una siesta al sol.", Tipo.Planta, 20, 80)
+     val Geodude = Pokemon ("Geodude", "Se suele encontrar en senderos de montaña y sitios parecidos. Conviene andar con cuidado para no pisarlo sin querer y provocar su enfado.", Tipo.Roca, 20, 80)
+
+     */
+
+    /*
     private fun getEfectividad(tipoAtacante: Tipo, tipoDefensor: Tipo): Double {
         val tablaEfectividad = mapOf(
             Pair(Tipo.Electrico, Tipo.Roca) to 0.0,
@@ -49,5 +100,8 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int)
         )
         return tablaEfectividad.getOrDefault(Pair(tipoAtacante, tipoDefensor), 1.0)
     }
+    */
+
+
 
 }
