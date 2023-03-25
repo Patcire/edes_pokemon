@@ -45,24 +45,28 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, vida: Int) {
             return field
         }
         set(value) {
+            if (value<=0){
+                throw Exception ("Debe ser positiva\n")
+            }
             field = value
         }
 
 
     //FUNCION RECIBIR ATAQUE
-    fun recibir_Ataque(danio: Int, efectividad: Double): Int {
-        vida -= (danio * efectividad).toInt()
+    fun recibir_Ataque(danio: Int, efectividad: Double): Boolean {
 
-        //RECIBIMOS CUANTOS PUNTOS DE VIDA LE QUEDAN
-            if (vida > 0) {
-                println("$nombre ha impactado con $danio puntos de ataque y te quedan $vida puntos de vida.")
-            //SI LOS PUNTOS DE VIDA LLEGAN A 0 O MENOS, SALDRA UN MENSAJE DE DERROTA
-            } else if (vida <= 0) {
-                println("*************************")
-                println("++++$nombre ha sido derrotado++++")
-                println("*************************")
-            }
-            return vida
+        var vida_a_cero:Boolean=false
+        if ((danio * efectividad)<vida){
+            vida -= (danio * efectividad).toInt()
+             println("$nombre ha impactado con $danio puntos de ataque y te quedan $vida puntos de vida.")}
+        else{
+            println("*************************\n")
+            println("++++la vida de $nombre ha bajado a cero!!!!++++\n")
+            println("*************************\n")
+            vida_a_cero=true
+        }
+
+            return vida_a_cero
         }
 
 
@@ -75,8 +79,10 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, vida: Int) {
     }
 
     override fun toString(): String {
-        return super.toString()+"Soy un Pokemon $nombre, de tipo $tipo. $lore, "
+        return "Soy un $nombre, de tipo ${tipo.tipo_pokemon} con $vida puntos de vida.  $lore\n"
     }
 
+    //pokemon por defecto
+    constructor():this("pikachu", "rata", Tipo("electrico"), 100)
 
 }
