@@ -1,6 +1,6 @@
 package proyecto_final.clases
 
-class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int) {
+class Pokemon (nombre: String, lore: String, tipo: Tipo, vida: Int) {
 
     var nombre = "defecto"
         get() {
@@ -26,15 +26,7 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int)
             field = value
         }
 
-    var fuerza = 10
-        get() {
-            return field
-        }
-        set(value) {
-            field = value
-        }
-
-    private var vida = 150
+    private var vida = (100..150).random()
         get() {
             return field
         }
@@ -45,28 +37,32 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int)
 
     //FUNCION RECIBIR ATAQUE
     fun recibir_Ataque(danio: Int, efectividad: Double): Int {
-        val danio_hecho = (danio * efectividad).toInt()
-        vida -= danio_hecho
-            return vida.toInt()
-        //RECIBIMOS CUANTOS PUNTOS DE VIDA LE QUEDAN, SI QUEDAN.
-        /*
+        vida -= (danio * efectividad).toInt()
+
+        //RECIBIMOS CUANTOS PUNTOS DE VIDA LE QUEDAN
             if (vida > 0) {
                 println("$nombre ha impactado con $danio puntos de ataque y te quedan $vida puntos de vida.")
+            //SI LOS PUNTOS DE VIDA LLEGAN A 0 O MENOS, SALDRA UN MENSAJE DE DERROTA
             } else if (vida <= 0) {
-                println("$nombre ha sido derrotado")
+                println("*************************")
+                println("++++$nombre ha sido derrotado++++")
+                println("*************************")
             }
-            vida.toInt()
-        }*/
-    }
+            return vida
+        }
+
 
     init{
         this.nombre = nombre
         this.lore = lore
         this.tipo = tipo
-        this.fuerza = fuerza
         this.vida = vida
+
     }
 
+    override fun toString(): String {
+        return super.toString()+"Soy un Pokemon $nombre, de tipo $tipo. $lore, "
+    }
 
 
 }
