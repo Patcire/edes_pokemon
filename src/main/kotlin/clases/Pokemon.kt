@@ -19,7 +19,7 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int)
             field = value
         }
 
-    var tipo = Tipo("planta", "basico")
+    var tipo = Tipo("planta")
         get() {
             return field
         }
