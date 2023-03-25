@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 import proyecto_final.clases.Pokemon
 import proyecto_final.clases.Tipo
 
@@ -47,10 +46,50 @@ fun combatir(){
 
 
 
+fun combatir(lista_jugadores: MutableMap<String, Pokemon>){
+
+    while (true) {
+        for ((jugadorx, pokemon_jugadorx) in lista_jugadores){
+            pokemon_jugadorx.recibir_Ataque()
+            println("Turno del $jugadorx : \n")
+            menu_ataque()
+            var opcion= readln().toInt()
 
 
-=======
 
-    println("Program arguments: ${args.joinToString()}")
+        }
+
+        //if (pokemon_jugadorx1.recibir_Ataque(pokemon_jugadorx2.danio, )==true){
+
+    }
+}//fin del while
+
+fun menu_ataque(){
+    println("¿Qué ataque vas a emplear? Seleccione con un nº\n" +
+            "1-arañazo\n" +
+            "2-guantazo\n" +
+            "3-cabezazo\n" +
+            "" +
+            "Nota: Solo puede utilizar el cabezazo una vez por partida\n")
+
+
 }
->>>>>>> e12837f8ddd739ac34394ce214492b43561902df
+
+
+fun combatir(lista_jugadores: MutableMap<String, Pokemon>){
+
+    while (true) {
+        for ((jugadorx, pokemon_jugadorx) in lista_jugadores){
+            pokemon_jugadorx.recibir_Ataque()
+            println("Turno del $jugadorx : \n")
+            menu_ataque()
+            var opcion= readln().toInt()
+
+
+
+        }
+
+        //if (pokemon_jugadorx1.recibir_Ataque(pokemon_jugadorx2.danio, )==true){
+
+    }
+}//fin del while
