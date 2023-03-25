@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 import proyecto_final.clases.Pokemon
 import proyecto_final.clases.Tipo
 
@@ -48,3 +49,8 @@ fun combatir(){
 
 
 
+=======
+
+    println("Program arguments: ${args.joinToString()}")
+}
+>>>>>>> e12837f8ddd739ac34394ce214492b43561902df
