@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
 
     println("Jugadorx 1:\n")
     imprimir_pokemons_disponibles()
-    var jugadorx1=Pokemon()
+    //var jugadorx1=Pokemon()
 
 
 
