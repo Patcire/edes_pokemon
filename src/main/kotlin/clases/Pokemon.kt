@@ -1,6 +1,6 @@
 package proyecto_final.clases
 
-class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int){
+class Pokemon (nombre: String, lore: String, tipo: Tipo, vida: Int){
 
     var nombre = "defecto"
 
@@ -19,15 +19,7 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int)
             field = value
         }
 
-    var tipo = Tipo("planta", "basico")
-        get() {
-            return field
-        }
-        set(value) {
-            field = value
-        }
-
-    var fuerza = 10
+    var tipo = Tipo("planta")
         get() {
             return field
         }
@@ -56,7 +48,6 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, fuerza: Int, vida: Int)
         this.nombre = nombre
         this.lore = lore
         this.tipo = tipo
-        this.fuerza = fuerza
         this.vida = vida
     }
 
