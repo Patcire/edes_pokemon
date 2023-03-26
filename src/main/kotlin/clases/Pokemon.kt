@@ -39,7 +39,7 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, vida: Int) {
         }
 
 
-    private var vida = (100..150).random()
+    var vida = (100..150).random()
 
         get() {
             return field
@@ -68,7 +68,6 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, vida: Int) {
 
             return vida_a_cero
         }
-
 
     init{
         this.nombre = nombre
