@@ -10,16 +10,15 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_
             return field
         }
         set(value) {
-            field = value
+            if (value in lista_pokemon){
+            field = value}
+            else{
+                throw Exception ("Error. Debe ser un pikachu, bulbasur, squirtle o geodude\n")
+            }
         }
 
     var lore = "descripcion"
-        get() {
-            return field
-        }
-        set(value) {
-            field = value
-        }
+
 
     var tipo = "planta"
 
@@ -32,15 +31,6 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_
             } else {
                 throw Exception("Debe ser tipo planta, agua, electrico o roca\n")
             }
-        }
-
-    var fuerza = 10
-
-        get() {
-            return field
-        }
-        set(value) {
-            field = value
         }
 
 
@@ -66,10 +56,11 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_
 
     }
 
-    //pokemon por defecto
+    //constructor secundario, pokemon por defecto
     constructor():this("pikachu", "rata", "electrico", 100)
 
     companion object{
+        private val lista_pokemon = listOf<String>("bulbasur", "squirtle", "pikachu", "geodude")
         private val lista_tipos_pokemon = listOf<String>("planta", "agua", "electrico", "roca")
     }
 
@@ -99,7 +90,9 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_
 
 
     override fun comprobar_efectividad(tipo_pokemon_contrincante: String): Double {
+
         var efectividad = 0.0
+
         if (this.tipo.lowercase() == "electrico") {
             if (tipo_pokemon_contrincante == "electrico") {
                 efectividad = 1.0

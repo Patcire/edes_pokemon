@@ -76,6 +76,7 @@ fun menu_ataque(): Int {
 }
 
 fun crear_pokemons(mapa_jugador_pokemon:MutableMap<String, Pokemon>){
+
     for (jugador in mapa_jugador_pokemon.keys){
         println("$jugador :")
         imprimir_pokemons_disponibles()
