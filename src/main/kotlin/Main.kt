@@ -1,4 +1,5 @@
 import proyecto_final.clases.*
+
 fun main(args: Array<String>) {
     var pokemon_jugadorx1=Pokemon()
     var pokemon_jugadorx2=Pokemon()
@@ -55,24 +56,25 @@ fun main(args: Array<String>) {
 
     fun combatir(lista_jugadores: MutableMap<String, Pokemon>) {
         var opcion = menu_ataque()
+
         /*val efectivo = comprobar_efectividad()
         val danio_total = danio ()
         val danio = opcion * efectivo*/
 
         while (true) {
+
             for ((jugadorx, pokemon_jugadorx) in lista_jugadores) {
-                println("Es el turno del jugador $jugadorx.\n")
-                //dice q no pasan parametros por danio ni tipo
-            var opcion = menu_ataque()
-            var ataque = recibir_Ataque()
+                println("Es el turno del jugador $jugadorx\n y {pokemon_jugadorx")
+            //var opcion = menu_ataque()
+            var ataque_opcion = menu_ataque()
+
+
                 }
             } //fin del while
 
 
-            }
-
-
-    //Se declara el valor del ataque segun el que elija
+            }//fin fun combatir
+    //Se declara el valor del ataque segun el que elija//
     fun menu_ataque(): Int {
         println(
             "¿Qué ataque vas a emplear? Seleccione con un nº\n" +

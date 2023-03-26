@@ -51,7 +51,14 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, vida: Int) {
             field = value
         }
 
-
+    /*/fun elegir pokemon
+    fun imprimir_pokemons_disponibles(){
+        println("Escoja con el nº correspondiente a uno de los siguientes pokemon\n" +
+                "1-Pikachu\n" +
+                "2-Squirtle\n" +
+                "3-Bulbasur\n" +
+                "4-Geodude\n")
+    }*/
     //FUNCION RECIBIR ATAQUE
     fun recibir_Ataque(danio: Int, efectividad: Double): Boolean {
 
@@ -65,7 +72,6 @@ class Pokemon (nombre: String, lore: String, tipo: Tipo, vida: Int) {
             println("*************************\n")
             vida_a_cero=true
         }
-
             return vida_a_cero
         }
 
