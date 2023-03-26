@@ -13,10 +13,10 @@ interface combate {
         //Se declara el valor del ataque segun el que elija//
         fun menu_ataque(): Int {
             println(
-                "¿Qué ataque vas a emplear? Seleccione con un nº\n" +
-                        "1-arañazo\n" +
-                        "2-guantazo\n" +
-                        "3-cabezazo\n"
+            "¿Qué ataque vas a emplear? Seleccione con un nº\n" +
+                    "1-arañazo\n" +
+                    "2-guantazo\n" +
+                    "3-cabezazo\n"
             )
             var opcion = readln().toInt()
             return when (opcion) {
@@ -41,5 +41,5 @@ interface combate {
 
     }
 
-}
+
 

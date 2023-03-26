@@ -10,32 +10,32 @@ fun main(args: Array<String>) {
         "¡BIENVENIDE AL COMBATE, ENTRENADORX!\n" +
          "-----------------------------------------")
 
-    for (jugadorx in lista_jugadores.keys){
+    for (jugador in lista_jugadores.keys){
         imprimir_pokemons_disponibles()
         var opcion_escogida= readln().toInt()
         when (opcion_escogida){
             1 ->{
-                lista_jugadores[jugadorx]= Pokemon("pikachu", "raton amarillo", Tipo("electrico"),  (100..150).random())
-                println("$jugadorx ha escogido como pokemon a:\n" +
-                        lista_jugadores[jugadorx].toString()
+                lista_jugadores[jugador]= Pokemon("pikachu", "raton amarillo", Tipo("electrico"),  (100..150).random())
+                println("$jugador ha escogido como pokemon a:\n" +
+                        lista_jugadores[jugador].toString()
                 )
             }
             2->{
-                lista_jugadores[jugadorx]= Pokemon("squirtle", "tortuga chula", Tipo("agua"),  (100..150).random())
-                println("$jugadorx ha escogido como pokemon a:\n" +
-                        lista_jugadores[jugadorx].toString()
+                lista_jugadores[jugador]= Pokemon("squirtle", "tortuga chula", Tipo("agua"),  (100..150).random())
+                println("$jugador ha escogido como pokemon a:\n" +
+                        lista_jugadores[jugador].toString()
                 )
             }
             3->{
-                lista_jugadores[jugadorx]= Pokemon("bulbasur", "dino plantoso", Tipo("planta"),  (100..150).random())
-                println("$jugadorx ha escogido como pokemon a:\n" +
-                        lista_jugadores[jugadorx].toString()
+                lista_jugadores[jugador]= Pokemon("bulbasur", "dino plantoso", Tipo("planta"),  (100..150).random())
+                println("$jugador ha escogido como pokemon a:\n" +
+                        lista_jugadores[jugador].toString()
                 )
             }
             4->{
-                lista_jugadores[jugadorx]= Pokemon("geodude", "gymrat que no hace piernas", Tipo("roca"),  (100..150).random())
-                println("$jugadorx ha escogido como pokemon a:\n" +
-                        lista_jugadores[jugadorx].toString()
+                lista_jugadores[jugador]= Pokemon("geodude", "gymrat que no hace piernas", Tipo("roca"),  (100..150).random())
+                println("$jugador ha escogido como pokemon a:\n" +
+                        lista_jugadores[jugador].toString()
                 )
             }
         }//fin when
@@ -52,8 +52,8 @@ fun main(args: Array<String>) {
 
 fun combatir(lista_jugadores: MutableMap<String, Pokemon>) {
     while (true) {
-        for ((jugadorx, pokemon_jugadorx) in lista_jugadores) {
-            println("Es el turno del jugador $jugadorx.\n")
+        for ((jugador, pokemon_jugadorx) in lista_jugadores) {
+            println("Es el turno del jugador $jugador.\n")
             //dice q no pasan parametros por danio ni tipo
              //var opcion = menu_ataque()
             //var danio = recibir_Ataque(danio = opcion, tipo = comprobar_efectividad(tipoAtaque = tipo.tipo_pokemon_contrincante, tipoDefensa = pokemon_jugadorx.tipo)).toDouble()
