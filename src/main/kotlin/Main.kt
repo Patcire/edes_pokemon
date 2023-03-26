@@ -45,101 +45,29 @@ fun main(args: Array<String>) {
 } //fin del main
 
 
-<<<<<<< HEAD
+
 //a partir de aquí hay alugnas funciones que utiliza el main
 
 
-fun imprimir_pokemons_disponibles(){
-    println("Escoja con el nº correspondiente a uno de los siguientes pokemon\n" +
-            "1-Pikachu\n" +
-            "2-Squirtle\n" +
-            "3-Bulbasur\n" +
-            "4-Geodude\n")
 
-}
-
-
-
-
-fun combatir(lista_jugadores: MutableMap<String, Pokemon>){
-
+fun combatir(lista_jugadores: MutableMap<String, Pokemon>) {
     while (true) {
-        for ((jugadorx, pokemon_jugadorx) in lista_jugadores){
-            //pokemon_jugadorx.recibir_Ataque(danio)
-            println("Turno del $jugadorx : \n")
-            var danio= menu_ataque()
+        for ((jugadorx, pokemon_jugadorx) in lista_jugadores) {
+            println("Es el turno del jugador $jugadorx.\n")
+            //dice q no pasan parametros por danio ni tipo
+             //var opcion = menu_ataque()
+            //var danio = recibir_Ataque(danio = opcion, tipo = comprobar_efectividad(tipoAtaque = tipo.tipo_pokemon_contrincante, tipoDefensa = pokemon_jugadorx.tipo)).toDouble()
+            //danio en funcion?
+            //var efecto = comprobar_efectividad()
 
-
+            }
 
         }
-
-        //if (pokemon_jugadorx1.recibir_Ataque(pokemon_jugadorx2.danio, )==true){
-
-=======
-//a partir de aquí hay alugnas funciones que utiliza el main:
-    fun imprimir_pokemons_disponibles(){
-        println("Escoja con el nº correspondiente a uno de los siguientes pokemon\n" +
-                "1-Pikachu\n" +
-                "2-Squirtle\n" +
-                "3-Bulbasur\n" +
-                "4-Geodude\n")
->>>>>>> 86a255bd3aa2ffdeb6355e3e1cb1f9bec9217b9b
-    }
-
-<<<<<<< HEAD
-fun menu_ataque():Int{
-    println("¿Qué ataque vas a emplear? Seleccione con un nº\n" +
-            "1-arañazo\n" +
-            "2-guantazo\n" +
-            "3-cabezazo\n" +
-            "")
-    var opcion= readln().toInt()
-    var danio=0
-            if (opcion==1){
-                danio=8
-            }
-            if (opcion==2){
-                danio=10
-            }
-            if (opcion==3){
-                danio=30
-            }
-    return danio
-=======
-    fun combatir(lista_jugadores: MutableMap<String, Pokemon>) {
-        var opcion = menu_ataque()
-
-        /*val efectivo = comprobar_efectividad()
-        val danio_total = danio ()
-        val danio = opcion * efectivo*/
-
-        while (true) {
-
-            for ((jugadorx, pokemon_jugadorx) in lista_jugadores) {
-                println("Es el turno del jugador $jugadorx\n y {pokemon_jugadorx")
-            //var opcion = menu_ataque()
-            var ataque_opcion = menu_ataque()
-
->>>>>>> 86a255bd3aa2ffdeb6355e3e1cb1f9bec9217b9b
-
-                }
-            } //fin del while
+    } //fin del while
 
 
-            }//fin fun combatir
-    //Se declara el valor del ataque segun el que elija//
-    fun menu_ataque(): Int {
-        println(
-            "¿Qué ataque vas a emplear? Seleccione con un nº\n" +
-                    "1-arañazo\n" +
-                    "2-guantazo\n" +
-                    "3-cabezazo\n"
-        )
-        var opcion = readln().toInt()
-        return when (opcion) {
-            1 -> 8
-            2 -> 10
-            3 -> 30
-            else -> throw Exception("Debes elegir una de las tres opciones anteriores.")
-        }
-    }
+
+
+
+
+
