@@ -1,7 +1,9 @@
 package proyecto_final.clases
 
+import clases.pokemon_interfaz
 
-class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) {
+
+class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_interfaz {
 
     var nombre = "defecto"
         get() {
@@ -72,16 +74,20 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) {
     }
 
     override fun toString(): String {
-        return "Soy un $nombre, de tipo ${tipo} con $vida puntos de vida.  $lore\n"
+        return "Soy un $nombre, de tipo ${tipo} con $vida puntos de vida.  Sobre mí debes saber que soy: $lore\n"
     }
 
     //FUNCION RECIBIR ATAQUE
-    fun recibir_Ataque(danio: Int, efectividad: Double): Boolean {
+    override fun recibir_Ataque(danio: Int, efectividad: Double): Boolean {
 
         var vida_a_cero:Boolean=false
         if ((danio * efectividad)<vida){
             vida -= (danio * efectividad).toInt()
-            println("$nombre ha impactado con $danio puntos de ataque y te quedan $vida puntos de vida.")}
+            println("------------------------------------")
+            println("$nombre ha sido impactado con ${(danio*efectividad).toInt()} de ataque y le quedan $vida puntos de vida.\n")
+            println("------------------------------------")
+        }
+
         else{
             println("*************************\n")
             println("++++la vida de $nombre ha bajado a cero!!!!++++\n")
@@ -92,7 +98,7 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) {
     }
 
 
-    fun comprobar_efectividad(tipo_pokemon_contrincante: String): Double {
+    override fun comprobar_efectividad(tipo_pokemon_contrincante: String): Double {
         var efectividad = 0.0
         if (this.tipo.lowercase() == "electrico") {
             if (tipo_pokemon_contrincante == "electrico") {
