@@ -69,10 +69,11 @@ fun combatir(lista_jugadores: MutableMap<String, Pokemon>){
 
     while (true) {
         for ((jugadorx, pokemon_jugadorx) in lista_jugadores){
-            //pokemon_jugadorx.recibir_Ataque()
+            //pokemon_jugadorx.recibir_Ataque(danio)
             println("Turno del $jugadorx : \n")
-            menu_ataque()
-            var opcion= readln().toInt()
+            var danio= menu_ataque()
+
+
 
         }
 
@@ -81,14 +82,24 @@ fun combatir(lista_jugadores: MutableMap<String, Pokemon>){
     }
 }//fin del while
 
-fun menu_ataque(){
+fun menu_ataque():Int{
     println("¿Qué ataque vas a emplear? Seleccione con un nº\n" +
             "1-arañazo\n" +
             "2-guantazo\n" +
             "3-cabezazo\n" +
-            "" +
-            "Nota: Solo puede utilizar el cabezazo una vez por partida\n")
-
+            "")
+    var opcion= readln().toInt()
+    var danio=0
+            if (opcion==1){
+                danio=8
+            }
+            if (opcion==2){
+                danio=10
+            }
+            if (opcion==3){
+                danio=30
+            }
+    return danio
 
 }
 
