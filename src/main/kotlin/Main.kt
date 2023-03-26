@@ -37,41 +37,40 @@ fun main(args: Array<String>) {
                         lista_jugadores[jugadorx].toString()
                 )
             }
-        } //fin when
+        }//fin when
     }//fin for
 
 
 } //fin del main
 
 
-//a partir de aquí hay alugnas funciones que utiliza el main
-
-
+//a partir de aquí hay alugnas funciones que utiliza el main:
     fun imprimir_pokemons_disponibles(){
         println("Escoja con el nº correspondiente a uno de los siguientes pokemon\n" +
                 "1-Pikachu\n" +
                 "2-Squirtle\n" +
                 "3-Bulbasur\n" +
                 "4-Geodude\n")
-
     }
 
     fun combatir(lista_jugadores: MutableMap<String, Pokemon>) {
-        var opcion = proyecto_final.clases.menu_ataque()
-        //val danio = opcion * efectividad
-        //val efectivo = comprobar_efectividad()
+        var opcion = menu_ataque()
+        /*val efectivo = comprobar_efectividad()
+        val danio_total = danio ()
+        val danio = opcion * efectivo*/
+
         while (true) {
             for ((jugadorx, pokemon_jugadorx) in lista_jugadores) {
                 println("Es el turno del jugador $jugadorx.\n")
                 //dice q no pasan parametros por danio ni tipo
-
-
+            var opcion = menu_ataque()
+            var ataque = recibir_Ataque()
                 }
-            }
+            } //fin del while
 
 
             }
-        //fin del while
+
 
     //Se declara el valor del ataque segun el que elija
     fun menu_ataque(): Int {
@@ -81,16 +80,11 @@ fun main(args: Array<String>) {
                     "2-guantazo\n" +
                     "3-cabezazo\n"
         )
-        var opcionAtaque = readLine()!!.toInt()
-        return opcionAtaque
-
         var opcion = readln().toInt()
         return when (opcion) {
             1 -> 8
             2 -> 10
             3 -> 30
             else -> throw Exception("Debes elegir una de las tres opciones anteriores.")
-
-
         }
     }
