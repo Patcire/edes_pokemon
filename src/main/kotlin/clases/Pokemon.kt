@@ -5,10 +5,10 @@ import clases.pokemon_interfaz
 /**
  * Clase Pokemon.
  * Se reunen las funciones y parametros necesario de las que hace uso la clase Pokemon.
- * @property nombre : que contiene el nombre del Pokemon.
- * @property lore : que contiene pequeña descripcion del Pokemon.
- * @property tipo : determina el tipo del Pokemon.
- * @property vida :se establece un numero aleatorio entre 100 y 150 para asignarle los puntos de vida.
+ * @property nombre [String] : que contiene el nombre del Pokemon.
+ * @property lore [String]: que contiene pequeña descripcion del Pokemon.
+ * @property tipo [String] : determina el tipo del Pokemon.
+ * @property vida [Int]: se establece un numero aleatorio entre 100 y 150 para asignarle los puntos de vida.
  *
  * @param comprobar_efectividad
  * @param recibir_ataque
@@ -145,9 +145,13 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_
 
     /**
      * @param recibir_ataque :
-     * Funcion que itera el ataque hacia cada uno de los Pokemons usando el multiplicador de efectividad y el danio base del ataque
+     * Funcion por la que el Pokemon que la llama, recibe el daño del ataque  contrario. Para ello usa el multiplicador de efectividad y el danio base del ataque
      * Mostrara el progreso de disminucion de los puntos de vida y finalizara cuando uno de los dos Pokemons sea el primero en llegar a 0 o menos.
-     * @return  vida_a_cero : la actualizacion de la resta en los puntos de vida mientas estos sean > 0
+     * @return  vida_a_cero : Devuelve True si la vida del pokemon llega a cero, false para lo contrario
+     *
+     *  @author: Sara Sánchez, Patricio Cifredo
+     *  @since 27/03/2027
+     *
      */
     override fun recibir_Ataque(danio: Int, efectividad: Double): Boolean {
 

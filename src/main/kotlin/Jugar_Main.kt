@@ -2,8 +2,15 @@ import proyecto_final.clases.*
 import funciones.*
 
 /**
- * @param main :Funcion principal que crea dos instancias de la clase Pokemon y les asigna sus jugadores correspondientes.
- *                  Posterior mente llama a la funcion de combate.
+ *  Funcion [main] que ejecuta el juego.  Crea dos instancias por defecto de la clase Pokemon, actualiza sus parámetros a los del pokemon escogido por
+ *  el jugador mediante la función [crear_pokemons], les asigna sus jugadores correspondientes mediante un mapa y desarrolla el combate
+ *  invocando la función [combatir].
+ *
+ *
+ *
+ *   @author: Sara Sánchez, Patricio Cifredo
+ *   @since 27/03/2027
+ *
  */
 fun main(args: Array<String>) {
 

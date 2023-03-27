@@ -6,10 +6,14 @@ juegan un duelo contra otrx adversarix, cada unx con un único Pokemon. <br>
 
 -**Evolución del proyecto**: El planteamiento y diseño inicial del proyecto contaba con varias clases
 y métodos. Sin embargo, en la fase de implementación, se observaron diversos errores inherentes al propio diseño, donde las clases
-se solapaban en muchos ámbitos o directamente no ayudabanÇ/aportaban al desarrollo de la app. <br>
+se solapaban en muchos ámbitos o directamente no ayudaban/aportaban al desarrollo de la app. <br>
 <br>
 Finalmente el proyecto se sustenta en: una única clase (_Pokemon_), una interfaz de la que Pokemon hereda sus métodos,
 un archivo .kt para funciones que luego importa el main y el propio main, que ejecuta el juego.
+
+*Última actualización del proyecto: 27/03/2022*
+
+*Desarrollado por: Sara Sánchez, Patricio Cifredo*
 
 ## <p><u>·Pokemon.</p></u>
 Hemos realizado una **_clase_** para Pokemon donde determinamos los atributos de clase, hemos comprobado la efectividad 
@@ -58,6 +62,8 @@ pidiendo ingresar un número correcto hasta que se realice la peticion.</li>
 <li>Implementar una lista de Pokemons de donde elegir más extensa.</li>
 <li>Hacer que los jugadores tengan un equipo de combate completo con 6 Pokemons.</li>
 </ol>
+
+
 
 ## ¡Esperamos que disfrutes!
 

@@ -6,10 +6,14 @@ import proyecto_final.clases.Pokemon
 /**
  * Hemos reunido aqui todas las funciones cuyos datos son usados en el desarrollo del programa.
  * Aunarlas en un mismo fichero nos ha hecho mas facil la busqueda de las funciones, reduciendo el numero de ficheros y packages.
- * @param combatir actualizara la vida en la iteracion de cada uno de los Pokemons hasta que uno de ellos llegue a 0, en cuyo caso se lanza un mensaje y finaliza el proceso.
+ * @param combatir Función principal del programa. Actualiza la vida para cada pokemon en la iteracion de cada uno de los turnos hasta que uno de ellos llegue a 0.
+ * Para ello llama a otras funciones ya implementadas en el proyecto. Finaliza con un mensaje de quién ha ganado.
  * @param imprimir_pokemons_disponibles funcion que actualiza la opcion del Pokemon que escogemos entre los disponibles.
- * @param menu_ataque funcion donde se elige una de entre tres opciones de ataque y se obtiene el valor del danio base de ataque que sera aplicado en la funcion de recibir_ataque
- * @param crear_pokemons actualiza los dos Pokemons que se reciben en main, cada uno con sus caracteristicas independientes.
+ * @param menu_ataque funcion donde se elige una de entre tres opciones de ataque, devuelve el valor del danio base de ataque que sera aplicado en la funcion de recibir_ataque
+ * @param crear_pokemons actualiza los parámetros de los dos Pokemons que recibe , para ajustar el pokemon, a las característica de los 4 pokemons a elegir.
+ *
+ * @author: Sara Sánchez, Patricio Cifredo
+ * @since 27/03/2027
  */
 
 fun combatir(pokemon_jugador1: Pokemon, pokemon_jugador2: Pokemon) {
