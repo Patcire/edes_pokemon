@@ -2,26 +2,17 @@
 package funciones
 
 import proyecto_final.clases.Pokemon
+
 /**
- * Clase Pokemon
- * En esta class desarrllamos el elemento Pokemon y almacenamos las funciones que necesita usar.
- * @param combatir es la funcion donde se desarrolla el "combate" Pokemon, actualizara la vida de cada uno hasta llegar a 0 puntos,
- * teniendo en cuenta el danio que hace el tipo de ataque y la efectividad de los tipos de Pokemon.
- * @return Pokemon ganador
- *
- *@param crear_pokemons Pokemon ganador tras al actualizacion de puntos de cada jugador por turnos.
- * La iteracion finaliza una vez que uno de los dos se actualiza a 0 o menos puntos.
- * @return: Devuelve Pokemon con todos sus atributos propios del Pokemon generado.
- * @param crear_pokemons :Devuelve un Pokemon con sus atributos segun la eleccion en el menu del numero que le corresponde:
- * @param nombre : Hace referencia al Pokemon en cuestion.
- * @param lore : Hace referencia a una breve descripcion del Pokemon concreto que se elige.
- * @param tipo : Hace referencia al tipo del Pokemon, de esta manera podremos determinar la efectividad de sus ataques frente a los ataques de otro Pokemon de mismo o distinto tipo.
- * @param vida :se le ha asignado un valor aleatorio para que asi, incluso cogiendo el mismo Pokemon, la victoria del combate
- * no dependa de quien empieza primero, sino de los ataques elegidos.
+ * Hemos reunido aqui todas las funciones cuyos datos son usados en el desarrollo del programa.
+ * Aunarlas en un mismo fichero nos ha hecho mas facil la busqueda de las funciones, reduciendo el numero de ficheros y packages.
+ * @param combatir actualizara la vida en la iteracion de cada uno de los Pokemons hasta que uno de ellos llegue a 0, en cuyo caso se lanza un mensaje y finaliza el proceso.
+ * @param imprimir_pokemons_disponibles funcion que actualiza la opcion del Pokemon que escogemos entre los disponibles.
+ * @param menu_ataque funcion donde se elige una de entre tres opciones de ataque y se obtiene el valor del danio base de ataque que sera aplicado en la funcion de recibir_ataque
+ * @param crear_pokemons actualiza los dos Pokemons que se reciben en main, cada uno con sus caracteristicas independientes.
  */
 
 fun combatir(pokemon_jugador1: Pokemon, pokemon_jugador2: Pokemon) {
-
     println("---------------------------------")
     when(pokemon_jugador1.comprobar_efectividad(pokemon_jugador2.tipo)) {
         1.0 -> println("El combate va a estar igualado. ¡Los pokemon son del mismo tipo!\n")
@@ -65,6 +56,7 @@ fun imprimir_pokemons_disponibles(){
             "(la vida será generada aleatoriamente)\n")
 
 }
+
 
 fun menu_ataque(): Int {
     println(

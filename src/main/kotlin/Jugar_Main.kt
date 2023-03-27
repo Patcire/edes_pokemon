@@ -1,6 +1,10 @@
 import proyecto_final.clases.*
 import funciones.*
 
+/**
+ * @param main :Funcion principal que crea dos instancias de la clase Pokemon y les asigna sus jugadores correspondientes.
+ *                  Posterior mente llama a la funcion de combate.
+ */
 fun main(args: Array<String>) {
 
     val pokemon_jugador1=Pokemon()

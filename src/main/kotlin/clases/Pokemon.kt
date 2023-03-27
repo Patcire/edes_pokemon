@@ -9,11 +9,9 @@ import clases.pokemon_interfaz
  * @property lore : que contiene pequeña descripcion del Pokemon.
  * @property tipo : determina el tipo del Pokemon.
  * @property vida :se establece un numero aleatorio entre 100 y 150 para asignarle los puntos de vida.
- * @property comprobar_efectividad :comprueba la efectivdad de un Pokemon sobre otro segun su tipo
- * @constructor Crea una isntancia
- * @return Multiplicador de efectividad del ataque
- * @property recibir_ataque :es una funcion en la que se aplica el danio que va a restarse a la vida del Pokemon que recibe el ataque. Aqui ya se tiene en cuenta la efectividad del ataque segun el tipo de Pokemon.
- * @return : puntos de vida restantes. Si llega a 0 anunciara el ganador el combate.
+ *
+ * @param comprobar_efectividad
+ * @param recibir_ataque
  *
  */
 class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_interfaz {
@@ -83,6 +81,12 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_
         return "Soy un $nombre, de tipo ${tipo} con $vida puntos de vida.  Sobre mí debes saber que soy: $lore\n"
     }
 
+    /**
+     * @param comprobar_efectividad
+     * Hace relacion de comparacion entre los tipos de Pokemons que existe y les asigna un valor de multiplicacion a cada uno segun sea muy efectivo, poco efectivo o normal.
+     *
+     * @return efectividad : devuelve el multiplicador que se usara en la funcion recibir_ataque
+     */
     override fun comprobar_efectividad(tipo_pokemon_contrincante: String): Double {
 
         var efectividad = 0.0
@@ -138,6 +142,13 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_
         return efectividad
 
     }
+
+    /**
+     * @param recibir_ataque :
+     * Funcion que itera el ataque hacia cada uno de los Pokemons usando el multiplicador de efectividad y el danio base del ataque
+     * Mostrara el progreso de disminucion de los puntos de vida y finalizara cuando uno de los dos Pokemons sea el primero en llegar a 0 o menos.
+     * @return  vida_a_cero : la actualizacion de la resta en los puntos de vida mientas estos sean > 0
+     */
     override fun recibir_Ataque(danio: Int, efectividad: Double): Boolean {
 
         var vida_a_cero:Boolean=false
