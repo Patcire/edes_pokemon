@@ -1,24 +1,25 @@
-/**
- * Clase Pokemon
- * En esta class desarrllamos el elemento Pokemon y almacenamos las funciones que necesita usar.
- *
- *@param crear_pokemons Pokemon ganador tras al actualizacion de puntos de cada jugador por turnos.
- * La iteracion finaliza una vez que uno de los dos se actualiza a 0 o menos puntos.
- *
- * @author: Patricio Cifredo.
- * @author: Sara Sanchez.
- */
 
 package funciones
 
 import proyecto_final.clases.Pokemon
-
 /**
+ * Clase Pokemon
+ * En esta class desarrllamos el elemento Pokemon y almacenamos las funciones que necesita usar.
  * @param combatir es la funcion donde se desarrolla el "combate" Pokemon, actualizara la vida de cada uno hasta llegar a 0 puntos,
  * teniendo en cuenta el danio que hace el tipo de ataque y la efectividad de los tipos de Pokemon.
  * @return Pokemon ganador
- * 
+ *
+ *@param crear_pokemons Pokemon ganador tras al actualizacion de puntos de cada jugador por turnos.
+ * La iteracion finaliza una vez que uno de los dos se actualiza a 0 o menos puntos.
+ * @return: Devuelve Pokemon con todos sus atributos propios del Pokemon generado.
+ * @param crear_pokemons :Devuelve un Pokemon con sus atributos segun la eleccion en el menu del numero que le corresponde:
+ * @param nombre : Hace referencia al Pokemon en cuestion.
+ * @param lore : Hace referencia a una breve descripcion del Pokemon concreto que se elige.
+ * @param tipo : Hace referencia al tipo del Pokemon, de esta manera podremos determinar la efectividad de sus ataques frente a los ataques de otro Pokemon de mismo o distinto tipo.
+ * @param vida :se le ha asignado un valor aleatorio para que asi, incluso cogiendo el mismo Pokemon, la victoria del combate
+ * no dependa de quien empieza primero, sino de los ataques elegidos.
  */
+
 fun combatir(pokemon_jugador1: Pokemon, pokemon_jugador2: Pokemon) {
 
     println("---------------------------------")
@@ -65,8 +66,6 @@ fun imprimir_pokemons_disponibles(){
 
 }
 
-
-//funcion elegir ataque
 fun menu_ataque(): Int {
     println(
         "¿Qué ataque vas a emplear? Seleccione con un nº\n" +
@@ -92,16 +91,6 @@ fun menu_ataque(): Int {
     }
 }
 
-/**
- * @param crear_pokemons :Devuelve un Pokemon con sus atributos segun la eleccion en el menu del numero que le corresponde:
- * @param nombre : Hace referencia al Pokemon en cuestion.
- * @param lore : Hace referencia a una breve descripcion del Pokemon concreto que se elige.
- * @param tipo : Hace referencia al tipo del Pokemon, de esta manera podremos determinar la efectividad de sus ataques frente a los ataques de otro Pokemon de mismo o distinto tipo.
- * @param vida :se le ha asignado un valor aleatorio para que asi, incluso cogiendo el mismo Pokemon, la victoria del combate
- * no dependa de quien empieza primero, sino de los ataques elegidos.
- *
- *
- */
 fun crear_pokemons(mapa_jugador_pokemon:MutableMap<String, Pokemon>){
 
     for (jugador in mapa_jugador_pokemon.keys){
