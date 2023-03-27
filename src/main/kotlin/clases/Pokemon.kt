@@ -2,7 +2,22 @@ package proyecto_final.clases
 
 import clases.pokemon_interfaz
 
-
+/**
+ * Clase Pokemon.
+ * Hemos reunido las funciones y parametros necesario de las que hace uso la clase Pokemon.
+ * Pokemon consta de :
+ * @param nombre : que contiene el nombre del Pokemon.
+ * @param lore : que contiene pequeña descripcion del Pokemon.
+ * @param tipo : determina el tipo del Pokemon.
+ * @param vida :se establece un numero aleatorio entre 100 y 150 para asignarle los puntos de vida.
+ *
+ * Funciones:
+ *
+ * @param comprobar_efectividad :comprueba la efectivdad de un Pokemon sobre otro segun su tipo
+ * @return Multiplicador de efectividad del ataque
+ * @param recibir_ataque :es una funcion en la que se aplica el danio que va a restarse a la vida del Pokemon que recibe el ataque
+ *  * Aqui ya se tiene en cuenta la efectividad del ataque segun el tipo de Pokemon.
+ */
 class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_interfaz {
 
     var nombre = "defecto"
@@ -56,7 +71,9 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_
 
     }
 
-    //constructor secundario, pokemon por defecto
+    /**
+     * Constructor secundario, crea un Pokemon por defecto.
+     */
     constructor():this("pikachu", "rata", "electrico", 100)
 
     companion object{
@@ -68,7 +85,7 @@ class Pokemon (nombre: String, lore: String, tipo: String, vida: Int) : pokemon_
         return "Soy un $nombre, de tipo ${tipo} con $vida puntos de vida.  Sobre mí debes saber que soy: $lore\n"
     }
 
-    //FUNCION RECIBIR ATAQUE
+
     override fun recibir_Ataque(danio: Int, efectividad: Double): Boolean {
 
         var vida_a_cero:Boolean=false
